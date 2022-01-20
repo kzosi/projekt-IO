@@ -110,19 +110,19 @@ public:
         }
     }
 
-    void BMI() {
+    void bmi() {
         double bmi;
         bmi = weight / (height / 100) * (height / 100);
         cout << "Twoje BMI wynosi: " << bmi << endl;
         cout << "-----------------------------" << endl;
-        cout << "< 16 - wyg≥odzenie" << endl;
+        cout << "< 16 - wyglodzenie" << endl;
         cout << "16 - 16.99 - wychudzenie" << endl;
         cout << "17 - 18.49 - niedowaga" << endl;
-        cout << "18.5 - 24.99 - wartoúÊ prawid≥owa" << endl;
+        cout << "18.5 - 24.99 - waga prawidlowa" << endl;
         cout << "25 - 29.99 - nadwaga" << endl;
-        cout << "30 - 34.99 - I stopieÒ oty≥oúci" << endl;
-        cout << "35 - 39.99 - II stopieÒ oty≥oúci" << endl;
-        cout << "powyøej 40 - oty≥oúÊ skrajna" << endl;
+        cout << "30 - 34.99 - I stopien otylosci" << endl;
+        cout << "35 - 39.99 - II stopie√± otylosci" << endl;
+        cout << "> 40 - otylosc skrajna" << endl;
 
 
     }
@@ -245,7 +245,7 @@ public:
         cout << "Podaj ilosc weglowodanow" << endl;
         cin >> carbs;
         cal = fats * 9 + protein * 4 + carbs * 4;
-        cout << "IloúÊ spozytych kalorii: " << cal << "cal" << endl;
+        cout << "Ilo≈ì√¶ spozytych kalorii: " << cal << "cal" << endl;
    
     }
     int getKcalFood() {
@@ -353,10 +353,10 @@ int main()
         cout << "1. Dodaj aktywnosc" << endl;//
         cout << "2. Dodaj jedzenie" << endl;//
         cout << "3. Profil" << endl;//
-        cout << "4. Sprawdü cele" << endl;//
-        cout << "5. Sprawdü plan" << endl;//
+        cout << "4. Sprawdz cele" << endl;//
+        cout << "5. Sprawdz plan" << endl;//
         cout << "6. Kalkulator kalorii" << endl;//
-        cout << "7. Sprawdü BMI" << endl;//
+        cout << "7. Sprawdz BMI" << endl;//
 
         cin >> c1;
 
@@ -374,7 +374,7 @@ int main()
             system("CLS");
             //Interface 3
             cout << "PROFIL" << endl;
-            cout << "1. Wyúwietl informacje" << endl;
+            cout << "1. Wyswietl informacje" << endl;
             cout << "2. Zmien wage" << endl;
             cout << "3. Zmien wzrost" << endl;
             cout << "4. Zmien imie" << endl;
@@ -387,7 +387,7 @@ int main()
             case '1':
                 system("CLS");
                 userobj.showinfo();
-                cout << endl << endl << "|Naciúnij 1 by wyjúÊ|" << endl;
+                cout << endl << endl << "|Naci≈ìnij 1 by wyjsc|" << endl;
                 cin >> back;
                 if (back == 1) {
                     back = 0;
@@ -429,7 +429,7 @@ int main()
         case '4':
             system("CLS");
             planobj.show(foodobj.getKcalFood(),activityobj.getKcalAc());
-            cout << endl << endl << "|Naciúnij 1 by wyjúÊ|" << endl;
+            cout << endl << endl << "|Naci≈ìnij 1 by wyjsc|" << endl;
             cin >> back;
             if (back == 1) {
                 back = 0;
@@ -441,7 +441,7 @@ int main()
             system("CLS");
             historyobj.showtrening(loginojb.getlogin());
             historyobj.showdiet(loginojb.getlogin());
-            cout << endl << endl << "|Naciúnij 1 by wyjúÊ|" << endl;
+            cout << endl << endl << "|Naci≈ìnij 1 by wyjsc|" << endl;
             cin >> back;
             if (back == 1) {
                 back = 0;
@@ -451,7 +451,7 @@ int main()
         case '6':
             system("CLS");
             foodobj.calories();
-            cout << endl << endl << "|Naciúnij 1 by wyjúÊ|" << endl;
+            cout << endl << endl << "|Naci≈ìnij 1 by wyjsc|" << endl;
             cin >> back;
             if (back == 1) {
                 back = 0;
@@ -460,8 +460,8 @@ int main()
             break;
         case '7':
             system("CLS");
-            userobj.BMI();
-            cout << endl << endl << "|Naciúnij 1 by wyjúÊ|" << endl;
+            userobj.bmi();
+            cout << endl << endl << "|Nacisnij 1 by wyjsc|" << endl;
             cin >> back;
             if (back == 1) {
                 back = 0;
@@ -476,4 +476,16 @@ int main()
     }
 }
 
+/* STANDARDY KODOWANIA:
+- Tabulacje - wciƒôcia przy kolejnych zagnie≈ºd≈ºenach
+- Nazwy klas zapisywane du≈ºymi literami
+- Brak stosowania obok siebie podobnych cyfr i liter - czytelno≈õƒá kodu
+- Wszytskie nazwy funkcji zapisane w standardzie camelCase
+*/
 
+/*REFAKTORYZACJA
+- Zmiana wszystkich nazw funkcji na takie, kt√≥re nie zawierajƒÖ du≈ºych liter - BMI() ->bmi() oraz na standard camelCase w przypadku
+nazw dwucz≈Çonoych 
+- usuniƒôcie poskich znak√≥w - brak kodowania UTF-8 w GitHub
+
+*/
