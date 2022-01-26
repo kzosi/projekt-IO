@@ -357,6 +357,7 @@ int main()
         cout << "5. Sprawdz plan" << endl;//
         cout << "6. Kalkulator kalorii" << endl;//
         cout << "7. Sprawdz BMI" << endl;//
+        cout << "8. Test jednostkowy" << endl;//
 
         cin >> c1;
 
@@ -461,6 +462,18 @@ int main()
         case '7':
             system("CLS");
             userobj.bmi();
+            cout << endl << endl << "|Nacisnij 1 by wyjsc|" << endl;
+            cin >> back;
+            if (back == 1) {
+                back = 0;
+                system("CLS");
+            }
+            break;
+            case '8':
+            system("CLS");
+            for(int i = 0; i<1000; i++){
+                userobj.bmi();
+            }
             cout << endl << endl << "|Nacisnij 1 by wyjsc|" << endl;
             cin >> back;
             if (back == 1) {
